@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 
 function CartOverview() {
@@ -12,4 +13,4 @@ function CartOverview() {
   );
 }
 
-export default CartOverview;
+export default memo(CartOverview);
