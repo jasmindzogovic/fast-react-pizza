@@ -11,7 +11,14 @@ function MenuItem({ pizza }) {
   const navigate = useNavigate();
 
   function handleAdd() {
-    dispatch(addItem(pizza));
+    const newItem = {
+      pizzaId: id,
+      name,
+      quantity: 1,
+      unitPrice,
+      totalPrice: unitPrice * 1,
+    };
+    dispatch(addItem(newItem));
     navigate("/cart");
   }
 
