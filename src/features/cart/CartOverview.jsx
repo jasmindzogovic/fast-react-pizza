@@ -7,8 +7,8 @@ function CartOverview() {
   const { cart } = useSelector((store) => store.cart);
 
   const price = cart
-    .map((item) => item.unitPrice)
-    .reduce((cur, acc) => cur + acc, 0);
+    .map((item) => item)
+    .reduce((cur, acc) => cur + acc.unitPrice * acc.quantity, 0);
 
   const count = cart
     .map((item) => item.quantity)
