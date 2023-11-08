@@ -3,12 +3,15 @@ import Button from "../../ui/Button";
 import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "./cartSlice";
+import EmptyCart from "./EmptyCart";
 
 function Cart() {
   const { cart } = useSelector((store) => store.cart);
 
   const { username } = useSelector((store) => store.user);
   const dispatch = useDispatch();
+
+  if (!cart.length) return <EmptyCart />;
 
   function handleClear() {
     dispatch(clearCart());
@@ -34,7 +37,9 @@ function Cart() {
         <Button type="primary" to="/order/new">
           Order pizzas
         </Button>
-        <Button type="secondary" onClick={handleClear}>Clear Cart</Button>
+        <Button type="secondary" onClick={handleClear}>
+          Clear Cart
+        </Button>
       </div>
     </div>
   );
