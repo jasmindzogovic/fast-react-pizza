@@ -35,14 +35,6 @@ function CreateOrder() {
 
   const { cart } = useSelector((store) => store.cart);
 
-  const user = {
-    username,
-    addressStatus,
-    position,
-    address,
-    errorAddress,
-  };
-
   if (!cart.length) return <EmptyCart />;
 
   return (

@@ -1,6 +1,7 @@
 // Test ID: IIDSAT
 
 import { useFetcher, useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
 import { getOrder } from "../../services/apiRestaurant";
 import {
   calcMinutesLeft,
@@ -8,7 +9,6 @@ import {
   formatDate,
 } from "../../utilities/helpers";
 import OrderItem from "./OrderItem";
-import { useEffect } from "react";
 import UpdateOrder from "./UpdateOrder";
 
 function Order() {
